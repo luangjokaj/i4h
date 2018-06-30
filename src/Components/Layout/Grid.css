@@ -1,0 +1,15 @@
+.grid {
+	list-style: none;
+	width: 100%;
+	overflow: visible;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 0;
+	box-sizing: border-box;
+	padding: 10px 10px 85px;
+
+	@media (--screen-tablet) {
+		padding-bottom: 10px;
+	}
+}

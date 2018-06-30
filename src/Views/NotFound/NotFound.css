@@ -1,0 +1,41 @@
+.not-found {
+	box-sizing: border-box;
+	padding: 20px;
+	height: 100%;
+	display: flex;
+
+	& .inner {
+		margin: auto;
+		text-align: center;
+		box-sizing: border-box;
+		padding-bottom: 20px;
+		transition: all .5s ease;
+
+		& svg, & h1, & p {
+			transition: all .5s ease;
+			opacity: 0;
+		}
+
+		& svg {
+			transform: translateY(-30px);
+			opacity: 0;
+		}
+
+		& h1 {
+			transition-delay: .2s;
+			transform: translateY(-30px);
+		}
+
+		& p {
+			transform: translateY(30px);
+			transition-delay: .3s;
+		}
+
+		&.visible {
+			& svg, & h1, & p {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+	}
+}

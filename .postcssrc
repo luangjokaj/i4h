@@ -1,0 +1,7 @@
+{
+	"plugins": {
+		"postcss-flexbugs-fixes": {},
+		"postcss-import": {},
+		"postcss-cssnext": {}
+	}
+}

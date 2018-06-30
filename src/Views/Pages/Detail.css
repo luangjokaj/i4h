@@ -1,0 +1,12 @@
+.view {
+	box-sizing: border-box;
+	padding: 20px;
+	transition: all .5s ease;
+	transform: translateY(-20px);
+	opacity: 0;
+
+	&.visible {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

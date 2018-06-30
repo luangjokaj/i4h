@@ -1,0 +1,128 @@
+.page-head {
+	background: var(--black);
+	width: 100%;
+	box-sizing: border-box;
+	padding: 40px 20px;
+	display: flex;
+	justify-content: space-between;
+	transition: all .5s ease;
+	transform: translateY(-100%);
+	opacity: 0;
+
+	&.visible {
+		transform: translateY(0);
+		opacity: 1;
+
+		& h1 {
+			transform: translateX(0);
+			opacity: 1;
+			color: var(--white);
+		}
+
+		& .filters {
+			transform: translateX(0);
+			opacity: 1;
+			display: none;
+
+			& svg {
+				left: -30px;
+				opacity: 1;
+			}
+		}
+	}
+
+	@media (--screen-tablet) {
+		display: block;
+		padding: 20px;
+	}
+
+	& h1 {
+		font-family: var(--font-head);
+		font-weight: 100;
+		margin: 0;
+		padding: 0;
+		transition: all .5s ease;
+		transition-delay: .3s;
+		transform: translateX(-20px);
+		opacity: 0;
+
+		@media (--screen-tablet) {
+			font-size: var(--h4-font-size);
+			padding-bottom: 0;
+		}
+
+		& a {
+			color: var(--white);
+
+			&:hover {
+				color: color(var(--white) blackness(30%));
+			}
+
+			&:active {
+				color: var(--white);
+			}
+		}
+	}
+
+	& .filters {
+		margin: auto 0;
+		position: relative;
+		transition: all .5s ease;
+		transition-delay: .5s;
+		transform: translateX(40px);
+		opacity: 0;
+
+		@media (--screen-tablet) {
+			margin-left: 30px;
+		}
+
+		@media (--screen-mobile) {
+			transform: translateX(20px);
+		}
+
+		& svg {
+			position: absolute;
+			left: -30px;
+			left: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: all .5s ease;
+			opacity: 0;
+		}
+
+		& button {
+			@apply --resetButton;
+			color: var(--black);
+			background: var(--white);
+			font-family: var(--font-mono);
+			font-size: var(--smaller-font-size);
+			box-sizing: border-box;
+			padding: 10px 20px;
+			transition: all .3s ease;
+
+			@media (--screen-mobile) {
+				font-size: 2.5vw;
+				padding: 10px 15px;
+			}
+
+			&.active {
+				font-weight: 800;
+			}
+
+			&:hover {
+				background: color(var(--black) lightness(30%));
+				color: var(--white);
+			}
+
+			&:first-of-type {
+				border-top-left-radius: 30px;
+				border-bottom-left-radius: 30px;
+			}
+
+			&:last-of-type {
+				border-top-right-radius: 30px;
+				border-bottom-right-radius: 30px;
+			}
+		}
+	}
+}
