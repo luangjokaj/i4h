@@ -42,7 +42,7 @@ class About extends Component {
 										React
 									</a>{' '}
 									and it renders on the client. The backend is powered by{' '}
-									<a target="https://prismic.io/dashboard/" target="_blank">
+									<a href="https://prismic.io/dashboard/" target="_blank">
 										Prismic
 									</a>, a fantastic minimalistic headless cms. It is build with{' '}
 									<a href="https://parceljs.org/" target="_blank">
