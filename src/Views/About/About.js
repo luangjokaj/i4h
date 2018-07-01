@@ -4,10 +4,17 @@ import { Helmet } from 'react-helmet';
 import AppearAfter from '../../Components/AppearAfter';
 import { Loading, Content, Button } from '../../Components/Layout';
 import Designers from '../../Components/Designers';
+import ReactGA from 'react-ga';
 import { GitHub } from '../../assets/svg';
 import './About.css';
 
+ReactGA.initialize('UA-120213712-1');
+
 class About extends Component {
+	componentWillMount() {
+		ReactGA.ga('send', 'pageview', `${this.props.location && this.props.location.pathname}`);
+	}
+
 	render() {
 		const { history } = this.props;
 
