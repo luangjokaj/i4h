@@ -26,6 +26,7 @@
 @custom-media --screen-phablet (max-width: 800px);
 @custom-media --screen-tablet print, (max-width: 1000px);
 @custom-media --screen-desktop print, (min-width: 1024px);
+@custom-media --screen-medium (max-width: 1200px);
 @custom-media --screen-middle-max (max-width: 1300px);
 @custom-media --screen-middle-min (min-width: 1300px);
 @custom-media --screen-big print, (min-width: 2000px);

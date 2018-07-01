@@ -39,6 +39,10 @@
 	background: var(--super-gray);
 	overflow: hidden;
 
+	@media (--screen-medium) {
+		width: 30%;
+	}
+
 	@media (--screen-tablet) {
 		width: 100%;
 		height: 80px;

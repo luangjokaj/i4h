@@ -88,6 +88,10 @@ svg * {
 	height: 100%;
 	position: relative;
 
+	@media (--screen-medium) {
+		width: 70%;
+	}
+
 	@media (--screen-tablet) {
 		width: 100%;
 		padding-top: 81px;
