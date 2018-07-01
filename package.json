@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node src/server.js",
-		"dev": "parcel src/index.html --no-cache",
+		"dev": "parcel src/index.html --no-cache -p 8080",
 		"heroku-postbuild": "parcel build src/index.html --no-cache"
 	},
 	"keywords": [],
