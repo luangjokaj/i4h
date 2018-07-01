@@ -3,7 +3,7 @@
 	"name": "Curated interfaces and visuals from the best designers & agencies.",
 	"icons": [
 		{
-			"src": "android-icon.png",
+			"src": "img/android-icon.png",
 			"size": "152x152",
 			"type": "image/png"
 		}
