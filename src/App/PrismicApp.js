@@ -6,7 +6,7 @@ import App from './App';
 import ReactGA from 'react-ga';
 import '../assets/globals.css';
 
-ReactGA.initialize('UA-119541922-1');
+ReactGA.initialize('UA-120213712-1');
 
 export default class PrismicApp extends React.Component {
 	state = {
