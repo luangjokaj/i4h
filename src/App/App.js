@@ -22,7 +22,7 @@ const App = props => (
 				<Route 
 					exact
 					path="/about/"
-					component={routeProps => <About {...routeProps} />}
+					component={routeProps => <About {...routeProps} prismicCtx={props.prismicCtx} />}
 				/>
 
 				<Route
