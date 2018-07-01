@@ -1,3 +1,5 @@
+[![Interfaces4Humans Logo](https://i.imgur.com/l5w3sBi.png)](http://www.wordpressify.co/)
+
 # Interfaces4Humans [![Dependencies](https://david-dm.org/luangjokaj/i4h.svg)](https://david-dm.org/luangjokaj/i4h)
 This project has been created with [Parcel](https://parceljs.org/).
 
