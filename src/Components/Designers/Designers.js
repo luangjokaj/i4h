@@ -27,7 +27,6 @@ class Designers extends Component {
 			return props.prismicCtx.api.getByUID('designers', props.authorUID, {}, (err, doc) => {
 				if (doc) {
 					this.setState({ doc });
-					console.log(this.state);
 				} else {
 					this.setState({ notFound: !doc })
 				}

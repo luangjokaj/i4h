@@ -47,11 +47,9 @@ export default class Help extends Component {
 					pageSize: 28,
 				})
 				.then(response => {
-					console.log(response);
 					this.resetState();
 					if (response.results_size > 0) {
 						this.setState({ doc: response });
-						console.log(this.state);
 					} else {
 						this.setState({ notFound: true });
 					}

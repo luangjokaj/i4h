@@ -40,7 +40,6 @@ export default class Page extends React.Component {
 				(err, doc) => {
 					if (doc) {
 						this.setState({ doc });
-						console.log(this.state);
 					} else {
 						this.setState({ notFound: !doc });
 					}

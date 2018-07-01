@@ -24,7 +24,6 @@ export default class Search extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		this.fetchPage(nextProps);
-		console.log(nextProps, 'hopa');
 	}
 
 	componentWillUnmount() {
@@ -54,11 +53,9 @@ export default class Search extends Component {
 						}
 					)
 					.then(response => {
-						console.log(response);
 						this.resetState();
 						if (response.results_size > 0) {
 							this.setState({ doc: response });
-							console.log(this.state);
 						} else {
 							this.setState({ notFound: true });
 						}
