@@ -19,7 +19,7 @@ export default class Search extends Component {
 
 	componentWillMount() {
 		this.fetchPage(this.props);
-		ReactGA.ga('send', 'pageview', `/search/${this.props.match.params.term}/${this.props.match.params.page ? this.props.match.params.page : ''}`);
+		ReactGA.ga('send', 'pageview', `${this.props.location.pathname}`);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -36,20 +36,23 @@ export default class Search extends Component {
 			doc: null,
 			notFound: false,
 		});
-	}
+	};
 
 	fetchPage(props) {
 		setTimeout(() => {
 			if (props.prismicCtx) {
 				return props.prismicCtx.api
-					.query([
-						Prismic.Predicates.any('document.type', ['web', 'app', 'portfolio', 'animation']),
-						Prismic.Predicates.fulltext('document', this.props.match.params.term || '')
-					], {
-						orderings : '[document.last_publication_date desc]',
-						page: props.match.params.page || 1,
-						pageSize: 28,
-					})
+					.query(
+						[
+							Prismic.Predicates.any('document.type', ['web', 'app', 'portfolio', 'animation']),
+							Prismic.Predicates.fulltext('document', this.props.match.params.term || ''),
+						],
+						{
+							orderings: '[document.last_publication_date desc]',
+							page: props.match.params.page || 1,
+							pageSize: 28,
+						}
+					)
 					.then(response => {
 						console.log(response);
 						this.resetState();
@@ -62,7 +65,7 @@ export default class Search extends Component {
 					});
 			}
 			return null;
-		}, 100)
+		}, 100);
 	}
 
 	render() {
@@ -74,7 +77,11 @@ export default class Search extends Component {
 			let termQuery = match.params.term ? match.params.term + '/' : '';
 			for (let i = 0; i < doc.total_pages; i++) {
 				let url = '/search/' + termQuery + (i + 1);
-				pagesArray.push(<li key={i}><NavLink to={url}>{i + 1}</NavLink></li>);
+				pagesArray.push(
+					<li key={i}>
+						<NavLink to={url}>{i + 1}</NavLink>
+					</li>
+				);
 			}
 
 			return (
@@ -85,13 +92,23 @@ export default class Search extends Component {
 					<div>
 						<AppearAfter className="page-head">
 							<div>
-								<h1>Search results for: <span>{match.params.term && match.params.term}</span></h1>
+								<h1>
+									Search results for: <span>{match.params.term && match.params.term}</span>
+								</h1>
 							</div>
 						</AppearAfter>
 						<Grid>
-							{doc && doc.results.map(item => (
-								<Tile key={item.id} image={item.data.image && item.data.image.url} alt={item.data.image && item.data.image.alt} url={item.uid} type={item.type} animation={item.data.animation && item.data.animation.url} />
-							))}
+							{doc &&
+								doc.results.map(item => (
+									<Tile
+										key={item.id}
+										image={item.data.image && item.data.image.url}
+										alt={item.data.image && item.data.image.alt}
+										url={item.uid}
+										type={item.type}
+										animation={item.data.animation && item.data.animation.url}
+									/>
+								))}
 						</Grid>
 
 						<AppearAfter className="pagination" delay={1000}>
@@ -100,9 +117,7 @@ export default class Search extends Component {
 					</div>
 				</div>
 			);
-		}
-
-		else if (this.state.notFound) {
+		} else if (this.state.notFound) {
 			return <NotFound />;
 		}
 

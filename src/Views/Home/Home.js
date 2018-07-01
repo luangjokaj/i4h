@@ -19,11 +19,7 @@ export default class Help extends Component {
 
 	componentWillMount() {
 		this.fetchPage(this.props);
-		ReactGA.ga(
-			'send',
-			'pageview',
-			`/${this.props.match.params.page ? this.props.match.params.page : ''}`
-		);
+		ReactGA.ga('send', 'pageview', `${this.props.location.pathname}`);
 	}
 
 	componentWillReceiveProps(nextProps) {

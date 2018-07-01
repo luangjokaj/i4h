@@ -22,12 +22,12 @@ export default class Help extends Component {
 			all: true,
 			freelancer: false,
 			agency: false,
-		}
+		},
 	};
 
 	componentWillMount() {
 		this.loadPage(this.props);
-		ReactGA.ga('send', 'pageview', `/portfolio/${this.props.match.params.page ? this.props.match.params.page : ''}`);
+		ReactGA.ga('send', 'pageview', `${this.props.location.pathname}`);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -42,7 +42,7 @@ export default class Help extends Component {
 		if (props.prismicCtx) {
 			return props.prismicCtx.api
 				.query(Prismic.Predicates.at(param1, param2), {
-					orderings : '[document.last_publication_date desc]',
+					orderings: '[document.last_publication_date desc]',
 					page: props.match.params.page || 1,
 					pageSize: 28,
 				})
@@ -55,7 +55,8 @@ export default class Help extends Component {
 					} else {
 						this.setState({ notFound: true });
 					}
-				}).catch(error => {
+				})
+				.catch(error => {
 					this.setState({ notFound: true });
 				});
 		}
@@ -67,34 +68,40 @@ export default class Help extends Component {
 			doc: null,
 			notFound: false,
 		});
-	}
+	};
 
-	loadPage = (props) => {
+	loadPage = props => {
 		this.fetchPage(props, 'document.type', 'portfolio');
-		this.setState({ filters: {
-			all: true,
-			freelancer: false,
-			agency: false,
-		}})
-	}
+		this.setState({
+			filters: {
+				all: true,
+				freelancer: false,
+				agency: false,
+			},
+		});
+	};
 
-	loadFreelance = (props) => {
-		this.fetchPage(props, 'my.portfolio.category', 'Freelancer')
-		this.setState({ filters: {
-			all: false,
-			freelancer: true,
-			agency: false,
-		}})
-	}
+	loadFreelance = props => {
+		this.fetchPage(props, 'my.portfolio.category', 'Freelancer');
+		this.setState({
+			filters: {
+				all: false,
+				freelancer: true,
+				agency: false,
+			},
+		});
+	};
 
-	loadAgency = (props) => {
-		this.fetchPage(props, 'my.portfolio.category', 'Agency')
-		this.setState({ filters: {
-			all: false,
-			freelancer: false,
-			agency: true,
-		}})
-	}
+	loadAgency = props => {
+		this.fetchPage(props, 'my.portfolio.category', 'Agency');
+		this.setState({
+			filters: {
+				all: false,
+				freelancer: false,
+				agency: true,
+			},
+		});
+	};
 
 	render() {
 		const { doc } = this.state;
@@ -103,7 +110,11 @@ export default class Help extends Component {
 			let pagesArray = [];
 			for (let i = 0; i < doc.total_pages; i++) {
 				let url = '/portfolio/' + (i + 1);
-				pagesArray.push(<li key={i}><NavLink to={url}>{i + 1}</NavLink></li>);
+				pagesArray.push(
+					<li key={i}>
+						<NavLink to={url}>{i + 1}</NavLink>
+					</li>
+				);
 			}
 
 			if (this.props.match.params.page > doc.total_pages) {
@@ -118,25 +129,50 @@ export default class Help extends Component {
 					<div>
 						<AppearAfter className="page-head">
 							<div>
-								<h1><Link to="/portfolio">Portfolio</Link></h1>
+								<h1>
+									<Link to="/portfolio">Portfolio</Link>
+								</h1>
 								<div className="filters">
 									<Filter />
-									<button onClick={this.loadPage} className={classNames({
-										'active': this.state.filters.all
-									})}>All</button>
-									<button onClick={this.loadFreelance} className={classNames({
-										'active': this.state.filters.freelancer
-									})}>Freelancer</button>
-									<button onClick={this.loadAgency} className={classNames({
-										'active': this.state.filters.agency
-									})}>Agency</button>
+									<button
+										onClick={this.loadPage}
+										className={classNames({
+											active: this.state.filters.all,
+										})}
+									>
+										All
+									</button>
+									<button
+										onClick={this.loadFreelance}
+										className={classNames({
+											active: this.state.filters.freelancer,
+										})}
+									>
+										Freelancer
+									</button>
+									<button
+										onClick={this.loadAgency}
+										className={classNames({
+											active: this.state.filters.agency,
+										})}
+									>
+										Agency
+									</button>
 								</div>
 							</div>
 						</AppearAfter>
 						<Grid>
-							{doc && doc.results.map(item => (
-								<Tile key={item.id} image={item.data.image && item.data.image.url} alt={item.data.image && item.data.image.alt} url={item.uid} type={item.type} animation={item.data.animation && item.data.animation.url} />
-							))}
+							{doc &&
+								doc.results.map(item => (
+									<Tile
+										key={item.id}
+										image={item.data.image && item.data.image.url}
+										alt={item.data.image && item.data.image.alt}
+										url={item.uid}
+										type={item.type}
+										animation={item.data.animation && item.data.animation.url}
+									/>
+								))}
 						</Grid>
 
 						<AppearAfter className="pagination" delay={1000}>
@@ -145,9 +181,7 @@ export default class Help extends Component {
 					</div>
 				</div>
 			);
-		}
-
-		else if (this.state.notFound) {
+		} else if (this.state.notFound) {
 			return <NotFound />;
 		}
 
