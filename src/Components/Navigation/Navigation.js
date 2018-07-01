@@ -1,9 +1,8 @@
-
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import AppearAfter from '../AppearAfter';
 import Name from '../../assets/svg/Name';
-import {Pictogram, Search } from '../../assets/svg';
+import { Pictogram, Search } from '../../assets/svg';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 
 class Navigation extends Component {
@@ -12,28 +11,28 @@ class Navigation extends Component {
 
 		this.state = {
 			menu: false,
-			text: ''
-		}
+			text: '',
+		};
 	}
 
 	toggleMenu = () => {
 		this.setState({ menu: !this.state.menu });
-	}
+	};
 
 	closeMenu = () => {
 		this.setState({ menu: false });
-	}
+	};
 
-	onChange = (event) => {
+	onChange = event => {
 		this.setState({ text: event.target.value });
-	}
+	};
 
-	onSubmit = (event) => {
+	onSubmit = event => {
 		event.preventDefault();
 		this.closeMenu();
 		this.props.history.push(`/search/${this.state.text}`);
 		document.getElementById('search').blur();
-	}
+	};
 
 	render() {
 		const { menu, text } = this.state;
@@ -42,38 +41,55 @@ class Navigation extends Component {
 			<AppearAfter className="header" delay={500}>
 				<header>
 					<Name className="name" />
-					<NavLink to="/" exact className="logo" onClick={this.closeMenu}><Pictogram /></NavLink>
-					<button onClick={this.toggleMenu} className={classNames('burger', {
-						'active': menu
-					})}>
+					<NavLink to="/" exact className="logo" onClick={this.closeMenu}>
+						<Pictogram />
+					</NavLink>
+					<button
+						onClick={this.toggleMenu}
+						className={classNames('burger', {
+							active: menu,
+						})}
+					>
 						<span />
 					</button>
-	
-					<ul className={classNames('menu', {
-						'active': menu
-					})}>
+
+					<ul
+						className={classNames('menu', {
+							active: menu,
+						})}
+					>
 						<li>
-							<NavLink to="/web" activeClassName="active" onClick={this.toggleMenu}>Web</NavLink>
+							<NavLink to="/web" activeClassName="active" onClick={this.toggleMenu}>
+								Web
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/app" activeClassName="active" onClick={this.toggleMenu}>App</NavLink>
+							<NavLink to="/app" activeClassName="active" onClick={this.toggleMenu}>
+								App
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/portfolio" activeClassName="active" onClick={this.toggleMenu}>Portfolio</NavLink>
+							<NavLink to="/portfolio" activeClassName="active" onClick={this.toggleMenu}>
+								Portfolio
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/animation" activeClassName="active" onClick={this.toggleMenu}>Animation</NavLink>
+							<NavLink to="/animation" activeClassName="active" onClick={this.toggleMenu}>
+								Animation
+							</NavLink>
 						</li>
 						<li className="search">
 							<form onSubmit={this.onSubmit}>
 								<input id="search" type="text" onChange={this.onChange} placeholder="Search..." />
-								<Link to={`/search/${text}`} className="search-button" onClick={this.closeMenu}><Search /></Link>
+								<Link to={`/search/${text}`} className="search-button" onClick={this.closeMenu}>
+									<Search />
+								</Link>
 							</form>
 						</li>
 					</ul>
 				</header>
 			</AppearAfter>
-		)
+		);
 	}
 }
 

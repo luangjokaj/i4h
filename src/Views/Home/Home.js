@@ -9,7 +9,7 @@ import AppearAfter from '../../Components/AppearAfter';
 import Loading from '../../Components/Layout/Loading';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-120237829-1')
+ReactGA.initialize('UA-120237829-1');
 
 export default class Help extends Component {
 	state = {
@@ -19,7 +19,11 @@ export default class Help extends Component {
 
 	componentWillMount() {
 		this.fetchPage(this.props);
-		ReactGA.ga('send', 'pageview', `/${this.props.match.params.page ? this.props.match.params.page : ''}`);
+		ReactGA.ga(
+			'send',
+			'pageview',
+			`/${this.props.match.params.page ? this.props.match.params.page : ''}`
+		);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -37,7 +41,7 @@ export default class Help extends Component {
 		if (props.prismicCtx) {
 			return props.prismicCtx.api
 				.query(Prismic.Predicates.any('document.type', ['web', 'app', 'portfolio', 'animation']), {
-					orderings : '[document.last_publication_date desc]',
+					orderings: '[document.last_publication_date desc]',
 					page: props.match.params.page || 1,
 					pageSize: 28,
 				})
@@ -49,7 +53,8 @@ export default class Help extends Component {
 					} else {
 						this.setState({ notFound: true });
 					}
-				}).catch(error => {
+				})
+				.catch(error => {
 					this.setState({ notFound: true });
 				});
 		}
@@ -63,7 +68,11 @@ export default class Help extends Component {
 			let pagesArray = [];
 			for (let i = 0; i < doc.total_pages; i++) {
 				let url = '/' + (i + 1);
-				pagesArray.push(<li key={i}><NavLink to={url}>{i + 1}</NavLink></li>);
+				pagesArray.push(
+					<li key={i}>
+						<NavLink to={url}>{i + 1}</NavLink>
+					</li>
+				);
 			}
 
 			return (
@@ -73,9 +82,17 @@ export default class Help extends Component {
 					</Helmet>
 					<div>
 						<Grid>
-							{doc && doc.results.map(item => (
-								<Tile key={item.id} image={item.data.image && item.data.image.mobile.url} alt={item.data.image && item.data.image.alt} url={item.uid} type={item.type} animation={item.data.animation && item.data.animation.mobile.url} />
-							))}
+							{doc &&
+								doc.results.map(item => (
+									<Tile
+										key={item.id}
+										image={item.data.image && item.data.image.mobile.url}
+										alt={item.data.image && item.data.image.alt}
+										url={item.uid}
+										type={item.type}
+										animation={item.data.animation && item.data.animation.mobile.url}
+									/>
+								))}
 						</Grid>
 
 						<AppearAfter className="pagination" delay={1000}>
@@ -84,9 +101,7 @@ export default class Help extends Component {
 					</div>
 				</div>
 			);
-		}
-
-		else if (this.state.notFound) {
+		} else if (this.state.notFound) {
 			return <NotFound />;
 		}
 
