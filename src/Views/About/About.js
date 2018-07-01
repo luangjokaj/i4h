@@ -9,6 +9,8 @@ import './About.css';
 
 class About extends Component {
 	render() {
+		const { history } = this.props;
+
 		return (
 			<div className="page-wrapper">
 				<Helmet>
