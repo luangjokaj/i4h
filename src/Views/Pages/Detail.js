@@ -23,7 +23,7 @@ export default class Page extends React.Component {
 		ReactGA.ga(
 			'send',
 			'pageview',
-			`${this.props.location.pathname}`
+			`${this.props.location && this.props.location.pathname}`
 		);
 	}
 

@@ -7,7 +7,7 @@ import './NotFound.css';
 
 class NotFound extends Component {
 	componentWillMount() {
-		ReactGA.ga('send', 'pageview', `${this.props.location.pathname}/not-found`);
+		ReactGA.ga('send', 'pageview', `${window.location.pathname && window.location.pathname}/not-found`);
 	}
 
 	render() {
