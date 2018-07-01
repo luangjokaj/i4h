@@ -12,7 +12,7 @@ import { Filter } from '../../assets/svg';
 import ReactGA from 'react-ga';
 import './Category.css';
 
-ReactGA.initialize('UA-120213712-1
+ReactGA.initialize('UA-120213712-1');
 
 export default class Help extends Component {
 	state = {

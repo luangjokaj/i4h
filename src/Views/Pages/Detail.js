@@ -10,7 +10,7 @@ import Designers from '../../Components/Designers';
 import ReactGA from 'react-ga';
 import './Detail.css';
 
-ReactGA.initialize('UA-120213712-1')
+ReactGA.initialize('UA-120213712-1');
 
 export default class Page extends React.Component {
 	state = {

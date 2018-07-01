@@ -9,7 +9,7 @@ import Tile from '../../Components/Tile';
 import Loading from '../../Components/Layout/Loading';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-120213712-1')
+ReactGA.initialize('UA-120213712-1');
 
 export default class Search extends Component {
 	state = {
