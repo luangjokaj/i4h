@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .loading {
 	position: absolute;
 	top: 50%;

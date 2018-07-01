@@ -1,15 +1,5 @@
 @parcel-import '../../node_modules/normalize.css/normalize.css';
 @parcel-import './variables.css';
-@parcel-import '../Components/Designers/Designer.css';
-@parcel-import '../Components/Layout/Button.css';
-@parcel-import '../Components/Layout/Content.css';
-@parcel-import '../Components/Layout/Grid.css';
-@parcel-import '../Components/Layout/Loading.css';
-@parcel-import '../Components/Navigation/Navigation.css';
-@parcel-import '../Components/Tile/Tile.css';
-@parcel-import '../Views/NotFound/NotFound.css';
-@parcel-import '../Views/Pages/Category.css';
-@parcel-import '../Views/Pages/Detail.css';
 
 html,
 body {

@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Back, Link, Preview } from '../../assets/svg';
 import AppearAfter from '../AppearAfter';
+import './Button.css';
 
 function Button({ onClick, children, className, back, link, preview, delay }) {
 	return (

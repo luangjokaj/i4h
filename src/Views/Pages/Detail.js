@@ -8,6 +8,7 @@ import { Link, Preview } from '../../assets/svg';
 import AppearAfter from '../../Components/AppearAfter';
 import Designers from '../../Components/Designers';
 import ReactGA from 'react-ga';
+import './Detail.css';
 
 ReactGA.initialize('UA-120237829-1')
 

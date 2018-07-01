@@ -10,6 +10,7 @@ import AppearAfter from '../../Components/AppearAfter';
 import Loading from '../../Components/Layout/Loading';
 import { Filter } from '../../assets/svg';
 import ReactGA from 'react-ga';
+import './Category.css';
 
 ReactGA.initialize('UA-120237829-1')
 

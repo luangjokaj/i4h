@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .grid {
 	list-style: none;
 	width: 100%;

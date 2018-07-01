@@ -1,4 +1,5 @@
 import React from 'react';
+import './Grid.css';
 
 function Grid({ children }:Props) {
 	return (

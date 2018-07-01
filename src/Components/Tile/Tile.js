@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AppearAfter from '../AppearAfter';
 import Gif from '../../assets/svg/Gif';
+import './Tile.css';
 
 function Tile({ image, alt, url, type, animation }: Props) {
 	const href = '/' + url;

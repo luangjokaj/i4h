@@ -3,6 +3,7 @@ import Loading from '../../Components/Layout/Loading';
 import PrismicReact from 'prismic-reactjs';
 import { Behance, Dribbble, Twitter, Link } from '../../assets/svg';
 import AppearAfter from '../AppearAfter';
+import './Designer.css';
 
 class Designers extends Component {
 	state = {

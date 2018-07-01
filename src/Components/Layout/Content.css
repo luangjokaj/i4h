@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .content {
 	clear: both;
 	width: 100%;

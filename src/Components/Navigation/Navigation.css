@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 @keyframes showNav {
 	0% {
 		opacity: 0;

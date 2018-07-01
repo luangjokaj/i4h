@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import AppearAfter from '../../Components/AppearAfter';
 import { Alien } from '../../assets/svg';
+import './NotFound.css';
 
 function NotFound() {
 	return (

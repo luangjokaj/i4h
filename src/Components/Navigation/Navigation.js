@@ -4,6 +4,7 @@ import AppearAfter from '../AppearAfter';
 import Name from '../../assets/svg/Name';
 import { Pictogram, Search } from '../../assets/svg';
 import { Link, NavLink, withRouter } from 'react-router-dom';
+import './Navigation.css';
 
 class Navigation extends Component {
 	constructor(props) {

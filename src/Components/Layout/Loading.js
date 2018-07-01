@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Riangle from '../../assets/svg/Riangle';
 import { Helmet } from 'react-helmet';
+import './Loading.css';
 
 function Loading({ fixed }) {
 	return (

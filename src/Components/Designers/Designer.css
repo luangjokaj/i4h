@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .designer {
 	position: absolute;
 	width: 100%;

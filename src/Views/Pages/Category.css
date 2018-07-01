@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .page-head {
 	background: var(--black);
 	width: 100%;

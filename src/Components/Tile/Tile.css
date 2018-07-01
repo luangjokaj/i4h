@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .tile {
 	width: calc(25% - 20px);
 	margin: 10px;

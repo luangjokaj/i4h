@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .button {
 	appearance: none;
 	background: none;

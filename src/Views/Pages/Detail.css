@@ -1,3 +1,5 @@
+@parcel-import '../../assets/variables.css';
+
 .view {
 	box-sizing: border-box;
 	padding: 20px;

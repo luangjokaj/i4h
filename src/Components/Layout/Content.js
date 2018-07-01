@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import './Content.css';
 
 function Content({ children, className }:Props) {
 	return (
