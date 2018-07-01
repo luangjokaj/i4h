@@ -3,8 +3,9 @@ import 'whatwg-fetch';
 import Prismic from 'prismic-javascript';
 import PrismicConfig from './prismic-configuration';
 import App from './App';
-import './assets/globals.css';
 import ReactGA from 'react-ga';
+import '../assets/globals.css';
+
 ReactGA.initialize('UA-119541922-1');
 
 export default class PrismicApp extends React.Component {

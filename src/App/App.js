@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Navigation from './Components/Navigation';
-import Home from './Views/Home';
-import Search from './Views/Search';
-import { Web, AppPage, Portfolio, Animation, Detail } from './Views/Pages';
-import NotFound from './Views/NotFound';
+import Navigation from '../Components/Navigation';
+import Home from '../Views/Home';
+import Search from '../Views/Search';
+import { Web, AppPage, Portfolio, Animation, Detail } from '../Views/Pages';
+import NotFound from '../Views/NotFound';
 
 const App = props => (
 	<Router>
