@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import AppearAfter from '../AppearAfter';
 import Name from '../../assets/svg/Name';
-import { Pictogram, Search } from '../../assets/svg';
+import { Pictogram, Search, External } from '../../assets/svg';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 import './Navigation.css';
 
@@ -59,6 +59,14 @@ class Navigation extends Component {
 							active: menu,
 						})}
 					>
+						<ul className="extra">
+							<li>
+								<NavLink to="/about" activeClassName="active" onClick={this.toggleMenu}>About</NavLink>
+							</li>
+							<li>
+								<a href="https://www.riangle.com/" target="_blank" onClick={this.toggleMenu}>Riangle <External /></a>
+							</li>
+						</ul>
 						<li>
 							<NavLink to="/web" activeClassName="active" onClick={this.toggleMenu}>
 								Web

@@ -1,0 +1,40 @@
+@parcel-import '../../assets/variables.css';
+
+.aboutPage {
+	text-align: left;
+
+	& p {
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	& .github {
+		display: inline-block;
+		border-radius: 60px;
+		box-sizing: border-box;
+		padding: 20px;
+		vertical-align: middle;
+		border: solid 1px var(--light-gray);
+		width: 100%;
+		text-align: center;
+		transition: all .3s ease;
+
+		&:hover {
+			background: var(--super-gray);
+		}
+
+		& svg,
+		& span {
+			vertical-align: middle;
+		}
+
+		& svg {
+			margin-right: 3px;
+		}
+
+		& span {
+			line-height: 1;
+		}
+	}
+}

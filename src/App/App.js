@@ -4,6 +4,7 @@ import Navigation from '../Components/Navigation';
 import Home from '../Views/Home';
 import Search from '../Views/Search';
 import { Web, AppPage, Portfolio, Animation, Detail } from '../Views/Pages';
+import About from '../Views/About';
 import NotFound from '../Views/NotFound';
 
 const App = props => (
@@ -17,6 +18,12 @@ const App = props => (
 				<Redirect exact from="/app/1" to="/app/" />
 				<Redirect exact from="/portfolio/1" to="/portfolio/" />
 				<Redirect exact from="/web/1" to="/web/" />
+
+				<Route 
+					exact
+					path="/about/"
+					component={routeProps => <About {...routeProps} />}
+				/>
 
 				<Route
 					exact
