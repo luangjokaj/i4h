@@ -23,7 +23,7 @@ function About({ history }) {
 							<div />
 						</div>
 						<div className="aboutPage">
-							<p>Hello my name is <a href="https://www.riangle.com/" target="_blank">Luan</a>, I build Interfaces4Humans because I wanted to sort, list and be able to search through the design and interactions I collected over the years.</p>
+							<p>Hello my name is <a href="https://www.riangle.com/" target="_blank">Luan</a>, I built Interfaces4Humans because I wanted to sort, list and be able to search through the design and interactions I collected over the years.</p>
 
 							<p>At the same time I wanted to challange myself to learn the latest front-end development ecosystems. This project is build on <a href="https://reactjs.org/" target="_blank">React</a> and it renders on the client. The backend is powered by <a target="https://prismic.io/dashboard/" target="_blank">Prismic</a>, a fantastic minimalistic headless cms. It is build with <a href="https://parceljs.org/" target="_blank">Parcel</a> and deployed on <a href="https://heroku.com/" target="_blank">Heroku</a>.</p>
 
