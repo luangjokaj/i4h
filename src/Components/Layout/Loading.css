@@ -2,13 +2,12 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, calc(-50% - 30px)) scale(.5);
+	transform: translate(-50%, -50%) scale(1);
 	width: 65px;
 	height: 65px;
 	background: var(--black);
 	border-radius: 100%;
 	transition: all .5s ease;
-	opacity: 0;
 
 	&.fixed {
 		position: fixed;
@@ -18,13 +17,10 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, calc(-50% - 3px)) perspective(2500px) rotateY(90deg);
+		transform: translate(-50%, -50%) perspective(100px) rotateY(90deg);
 		transition: all .5s ease;
 	}
 
-	transform: translate(-50%, -50%) scale(1);
-	opacity: 1;
-	
 	& svg {
 		animation: spin .8s ease infinite;
 	}
@@ -32,22 +28,22 @@
 
 @keyframes spin {
 	0% {
-		transform: translate(-50%, calc(-50% - 3px)) perspective(2500px) rotateY(0deg);
+		transform: translate(-50%, -50%) perspective(100px) rotateY(0deg) rotateX(0deg);
 	}
 
 	25% {
-		transform: translate(-50%, calc(-50% - 3px)) perspective(2500px) rotateY(90deg);
+		transform: translate(-50%, -50%) perspective(100px) rotateY(90deg) rotateX(0deg);
 	}
 
 	50% {
-		transform: translate(-50%, calc(-50% - 3px)) perspective(2500px) rotateY(0deg);
+		transform: translate(-50%, -50%) perspective(100px) rotateY(0deg) rotateX(0deg);
 	}
 
 	75% {
-		transform: translate(-50%, calc(-50% - 3px)) perspective(2500px) rotateY(0deg) rotateX(90deg);
+		transform: translate(-50%, -50%) perspective(100px) rotateY(0deg) rotateX(90deg);
 	}
 
 	100% {
-		transform: translate(-50%, calc(-50% - 3px)) perspective(2500px) rotateY(0deg) rotateX(0deg);
+		transform: translate(-50%, -50%) perspective(100px) rotateY(0deg) rotateX(0deg);
 	}
 }
