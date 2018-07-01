@@ -29,6 +29,7 @@
 		& p {
 			transform: translateY(30px);
 			transition-delay: .3s;
+			margin-top: 0;
 		}
 
 		&.visible {

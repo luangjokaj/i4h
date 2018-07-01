@@ -9,6 +9,10 @@
 	border-radius: 100%;
 	transition: all .5s ease;
 	opacity: 0;
+
+	&.fixed {
+		position: fixed;
+	}
 	
 	& svg {
 		position: absolute;

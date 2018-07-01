@@ -448,6 +448,7 @@
 			top: 50%;
 			transform: translateY(-50%);
 			cursor: pointer;
+			background: transparent;
 
 			&:before {
 				top: 0;

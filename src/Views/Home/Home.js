@@ -105,6 +105,6 @@ export default class Help extends Component {
 			return <NotFound />;
 		}
 
-		return <Loading />;
+		return <Loading fixed />;
 	}
 }
