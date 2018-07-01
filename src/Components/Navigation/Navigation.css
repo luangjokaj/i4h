@@ -321,6 +321,7 @@
 		width: 100%;
 		border-bottom: solid 1px var(--light-gray);
 		transition: all 0.5s ease;
+		z-index: 10;
 
 		@media (--screen-tablet) {
 			bottom: inherit;
@@ -398,9 +399,6 @@
 					&:hover {
 						background: var(--white);
 					}
-				}
-
-				& svg {
 				}
 			}
 
