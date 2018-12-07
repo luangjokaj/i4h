@@ -37,7 +37,7 @@
 		"prismic-reactjs": "^0.3.2",
 		"react": "^16.6.3",
 		"react-dom": "^16.6.3",
-		"react-ga": "^2.5.3",
+		"react-ga": "^2.5.6",
 		"react-helmet": "^5.2.0",
 		"react-router-dom": "^4.3.1"
 	}
