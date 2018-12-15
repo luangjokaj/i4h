@@ -33,7 +33,7 @@
 		"postcss-import": "^12.0.1",
 		"postcss-modules": "^1.4.1",
 		"postcss-parcel-import": "0.0.2",
-		"prismic-javascript": "^1.5.0",
+		"prismic-javascript": "^2.0.1",
 		"prismic-reactjs": "^0.3.2",
 		"react": "^16.6.3",
 		"react-dom": "^16.6.3",
